@@ -28,19 +28,16 @@ function displayGallery(galleryData) {
     let card = document.createElement("div");
     card.setAttribute("class", "galleryCard");
 
-    // if(e.images[0].type === "image/png"){
-    //     var img = document.createElement("img");
-    //     img.src = e.images[0].link;
-    // }
-    // else if(e.images[0].type === "video/mp4"){
-    //     var video = document.createElement("video");
-    //     video.src = e.images[0].link;
-    // }
     
-    //https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ7E3-E8ZrB30uydZQBdgljuYz9Z_YiWALgw&usqp=CAU
-    let image = document.createElement("img");
-    image.setAttribute("class", "cardImage")
-    image.src = `https://image.shutterstock.com/image-vector/404-error-web-page-template-260nw-2170493459.jpg`;
+    var image = document.createElement("img");
+    image.setAttribute("class", "cardImage");
+    image.setAttribute("referrerpolicy", "no-referrer");
+    
+    image.src = `https://i.imgur.com/${e.cover}.png`
+
+    if(e.cover === undefined){
+      image.src = `https://i.imgur.com/${e.id}.gif`
+    }
     
 
     let title = document.createElement("h2");
